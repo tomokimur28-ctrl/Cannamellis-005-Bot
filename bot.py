@@ -1,7 +1,10 @@
 import discord
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix="/")
+intents = discord.Intents.default()
+intents.message_content = True  # Needed so the bot can read message content
+
+bot = commands.Bot(command_prefix="/", intents=intents)
 
 MAX_HP = 750
 party = []
