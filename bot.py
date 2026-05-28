@@ -228,5 +228,4 @@ async def action(ctx, choice: str, target_role: int = None):
         await check_game_end(ctx)
 
 # --- Run the bot ---
-import os
 bot.run(os.getenv("BOT_TOKEN"))
