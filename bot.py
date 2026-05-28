@@ -208,9 +208,9 @@ async def action(ctx, choice: str, target_role: int = None):
     if not game_active:
         return
 
-    # Enemy acts after Player 4
+    # Enemy acts after the last player in the party
     last_actor = ctx.author
-    if player_roles[ctx.author] == 4:
+    if current_turn == len(party) - 1:  # last player acted
         await enemy_attack(ctx, last_actor)
         if not game_active:
             return
